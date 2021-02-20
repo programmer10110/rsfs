@@ -42,7 +42,6 @@
 //! [`rsfs::mem::unix`]: unix/index.html
 //! [`errors`]: ../errors/index.html
 
-#[cfg(unix)]
 #[path = "unix.rs"]
 mod fs;
 
