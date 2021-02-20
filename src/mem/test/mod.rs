@@ -9,7 +9,6 @@
 //! sequence of closures is drained as they return `Some(Result)`; if a closure returns `None`, the
 //! closure is not drained from the sequence.
 //!
-#[cfg(unix)]
 #[path = "unix.rs"]
 mod fs;
 

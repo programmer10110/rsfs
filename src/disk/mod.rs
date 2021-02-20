@@ -29,7 +29,6 @@ use std::time::SystemTime;
 
 use fs;
 
-#[cfg(unix)]
 use unix_ext;
 
 /// A builder used to create directories in various manners.
@@ -63,7 +62,6 @@ impl fs::DirBuilder for DirBuilder {
     }
 }
 
-#[cfg(unix)]
 impl unix_ext::DirBuilderExt for DirBuilder {
     fn mode(&mut self, mode: u32) -> &mut Self {
         self.0.mode(mode); self
@@ -375,7 +373,6 @@ impl fs::OpenOptions for OpenOptions {
     }
 }
 
-#[cfg(unix)]
 impl unix_ext::OpenOptionsExt for OpenOptions {
     fn mode(&mut self, mode: u32) -> &mut Self {
         self.0.mode(mode); self
@@ -421,7 +418,6 @@ impl fs::Permissions for Permissions {
     }
 }
 
-#[cfg(unix)]
 impl unix_ext::PermissionsExt for Permissions {
     fn mode(&self) -> u32 {
         self.0.mode()
@@ -542,7 +538,6 @@ impl fs::GenFS for FS {
     }
 }
 
-#[cfg(unix)]
 impl unix_ext::GenFSExt for FS {
     fn symlink<P: AsRef<Path>, Q: AsRef<Path>>(&self, src: P, dst: Q) -> Result<()> {
         ::std::os::unix::fs::symlink(src, dst)
