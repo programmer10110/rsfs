@@ -59,7 +59,6 @@
 mod fs;
 pub use fs::*;
 
-pub mod disk;
 pub mod mem;
 pub mod unix_ext;
 
